@@ -12,7 +12,7 @@ wb = Workbook()
 sheet = wb.active
 sheet.title = "Sheet1"
 mon=["Jan.","Feb.","Mar.","Apr.","May","Jun","Jul.","Aug.","Sep.","Oct.","Nov.","Dec."]
-row=['(AM9:00)','PM2.5','CO','SO2']
+row=['(AM9:00)','CO','PM2.5','SO2']
 sheet.append(row)
 for i in range(2,14):
   sheet["A%d" % (i)].value = mon[i-2]
