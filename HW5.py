@@ -132,8 +132,8 @@ chart.add_series({'name': '=Sheet1!$D$1','categories': '=Sheet1!$B$2:$B$13',
 chart.add_series({'name': '=Sheet1!$E$1','categories': '=Sheet1!$B$2:$B$13',
 'values': '=Sheet1!$E$2:$E$13'})
 
-chart.set_x_axis({'name': 'Date'})
-chart.set_y_axis({'name': 'Stock Value', 'major_gridlines': {'visible': False}})
+chart.set_x_axis({'name': '月份'})
+chart.set_y_axis({'name': '數值', 'major_gridlines': {'visible': False}})
 chart.set_legend({'position': 'top'})
 worksheet.insert_chart('G2: W20', chart)
 writer.save()
