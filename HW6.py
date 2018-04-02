@@ -30,16 +30,18 @@ c90=moving_average(c, 90)
 print (c30.size)
 print (c60.size)
 print (c90.size)
+print (len(c))
 cc30=[]
 cc60=[]
-for i in range (60,361):
+cc=[]
+for i in range (0,301):
     cc30.append(c30[i])
-for i in range (30,331):
+for i in range (0,301):
     cc60.append(c60[i])
-print(len(cc30))
-print(len(cc60))
+for i in range (0,301):
+    cc.append(c[i])
 
-dataa = { "30days":cc30, "60days":cc60, "90days":c90} 
+dataa = {"1day":cc, "30days":cc30, "60days":cc60, "90days":c90} 
 f1 = DataFrame(dataa) 
 print (f1)
 f1.plot()
