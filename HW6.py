@@ -36,9 +36,7 @@ cc60=[]
 cc=[]
 for i in range (0,301):
     cc30.append(c30[i])
-for i in range (0,301):
     cc60.append(c60[i])
-for i in range (0,301):
     cc.append(c[i])
 
 dataa = {"1day":cc, "30days":cc30, "60days":cc60, "90days":c90} 
