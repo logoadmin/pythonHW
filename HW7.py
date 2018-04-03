@@ -25,6 +25,6 @@ for i in range(0,3):
     nurl=url+school[i]+'.htm'
     x=APCS(nurl,stda,x)
 if x==1:
-    print("yes")
+    print("有錄取")
 else:
-    print("no")
+    print("沒錄取")
