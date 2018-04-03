@@ -24,7 +24,7 @@ for row in data['close']:
 c30=moving_average(c, 30)
 c60=moving_average(c, 60)
 c90=moving_average(c, 90)
-
+cc90=[]
 cc30=[]
 cc60=[]
 cc=[]
@@ -32,8 +32,10 @@ for i in range (0,301):
     cc30.append(c30[i])
     cc60.append(c60[i])
     cc.append(c[i])
+    cc90.append(c90[i])
 
-dataa = {"1day":cc, "30days":cc30, "60days":cc60, "90days":c90} 
+
+dataa = {"1day":cc, "30days":cc30, "60days":cc60, "90days":cc90} 
 f1 = DataFrame(dataa) 
 print (f1)
 f1.plot()
