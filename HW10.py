@@ -2,8 +2,10 @@
 import pandas as pd
 
 #data = pd.read_csv("http://opendata.epa.gov.tw/ws/Data/REWXQA/?$orderby=SiteName&$skip=0&$top=1000&format=csv")
+print("請等候讀取資料...")
 data=pd.read_csv("http://opendata.epa.gov.tw/ws/Data/AQI/?$format=csv")
 dataf=pd.DataFrame(data)
+print("讀取完成")
 l=[]
 v=[]
 c=[]

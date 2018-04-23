@@ -8,7 +8,7 @@ Created on Fri Mar 16 20:33:10 2018
 s=input("in:").split()
 x=""
 for j in range (0,len(s)):
-    T=list(s[j])
+    T=s[j]
     a=[None]*len(T)
     for i in range (1,len(T)-1):
         a[len(T)-1-i]=T[i]
