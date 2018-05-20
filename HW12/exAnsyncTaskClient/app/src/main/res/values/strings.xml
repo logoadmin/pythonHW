@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AsyncTask-Client測試</string>
+    <string name="title_activity_signin">SigninActivity</string>
+</resources>
