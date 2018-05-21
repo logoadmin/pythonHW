@@ -1,7 +1,6 @@
 """
 TCP/IP Server sample
 
-Author: Gwo-Chuan Lee 
 Date: 2018.05.12
 
 傳入socket前須將byte 轉成 byte 
