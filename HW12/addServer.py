@@ -11,12 +11,13 @@ Date: 2018.05.12
 (從socket接收/讀取) decode():  byte   ==> string 
 
 """
-import numpy as np
 import socket
 import pandas as pd
-HOST = '192.168.1.113'
+
+ip = socket.gethostbyname(socket.gethostname())	
+HOST = ip
 PORT = 5050
-url = 'https://tw.stock.yahoo.com/s/list.php?c=%B6%EC%BD%A6&rr=0.53721000%201523836084'
+url = 'https://tw.stock.yahoo.com/s/list.php?c=%A5b%BE%C9%C5%E9'
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #繫結socket
 server.bind((HOST, PORT))
@@ -32,9 +33,6 @@ while True: # 伺服器需不斷的測試是否有Client與之相連
 	
 	#讀取客戶端的資料, 並使用 decode() 將 byte 轉成 string
     data1 = connect_client.recv(1024).decode()
-	#data2 = connect_client.recv(1024).decode()
-    	#data=int(data1)+int(data2)
-    #print('Received: %s + %s = %d'%(data1,data2,data))
     table=pd.read_html(url,encoding="big5")[6]
     table = table.drop(table.columns[[0]],axis=0)
     ledn=table[1].values.tolist()
@@ -44,13 +42,23 @@ while True: # 伺服器需不斷的測試是否有Client與之相連
             n=t
         t=t+1
     #n=ledn.index(data1)
-    number = np.array(table[n:n+1][[1]])
+    number = str(table[1].values.tolist()[n])
+    time = str(table[2].values.tolist()[n])
+    sell =str(table[3].values.tolist()[n])
+    buy =str(table[4].values.tolist()[n])
+    sold=str(table[5].values.tolist()[n])
+    now =str(table[6].values.tolist()[n])
+    high=str(table[10].values.tolist()[n])
+    low=str(table[11].values.tolist()[n])
+    """
+    number = str(table[1].values.tolist()[t])
     time = np.array(table[n:n+1][[2]])
     sell =np.array(table[n:n+1][[3]])
     buy =np.array(table[n:n+1][[4]])
     sold=np.array(table[n:n+1][[5]])
     now =np.array(table[n:n+1][[6]])
-    led="股票代號:"+number+" 時間:" +time+" 成交:"+sell+" 買入:"+buy+" 售出:"+sold+" 漲跌:"+now
+    """
+    led="股票代號:"+number+" 時間:" +time+" 成交:"+sell+" 買入:"+buy+" 售出:"+sold+" 漲跌:"+now+" 最高:"+high+" 最低:"+low
     print(led)
     """
     table = table[[1,2,3,4,5,6,7,9,10,11]]

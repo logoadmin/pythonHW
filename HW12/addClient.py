@@ -13,9 +13,9 @@ Date: 2018.05.12
 """
 
 import socket
-
+ip = socket.gethostbyname(socket.gethostname())	
 #伺服端主機IP位址和連接埠號
-HOST = '192.168.1.113'
+HOST = ip
 PORT = 5050
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:

@@ -45,7 +45,7 @@ public class SigninActivity extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... arg0) {
 
             try {
-                Socket cs = new Socket("192.168.1.113",5050);
+                Socket cs = new Socket("192.168.1.16",5050);
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(cs.getInputStream()));
                 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(cs.getOutputStream()));
